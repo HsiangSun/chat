@@ -1,6 +1,5 @@
 package cn.hsiangsun.netty;
 
-import cn.hsiangsun.websocket.ServerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
@@ -30,7 +29,7 @@ public class WebSocketServer {
         bootstrap = new ServerBootstrap();
         bootstrap.group(bossGroup,workGroup)
                 .channel(NioServerSocketChannel.class)
-                .childHandler(new ServerInitializer());
+                .childHandler(new ServerInitializer());//new ServerInitializer()
     }
 
     public void start(){

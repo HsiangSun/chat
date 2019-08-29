@@ -4,8 +4,7 @@ mybatis:
 
 spring:
   datasource:
-    hikari:
-      driver-class-name: com.mysql.jdbc.Driver
-      jdbc-url: jdbc:mysql://localhost:3306/weTalk?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
-      username: root
-      password: root
+    url: jdbc:mysql://localhost:3306/weTalk?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 1314
+    driver-class-name: com.mysql.jdbc.Driver
