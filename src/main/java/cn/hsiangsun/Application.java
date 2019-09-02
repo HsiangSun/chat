@@ -1,10 +1,10 @@
 package cn.hsiangsun;
 
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication()
@@ -15,8 +15,7 @@ public class Application {
     }
 
     @Bean
-    public BCryptPasswordEncoder bCryptPasswordEncoder(){
-        return new BCryptPasswordEncoder();
+    public String  bCryptSalt(){
+        return BCrypt.gensalt();
     }
-
 }

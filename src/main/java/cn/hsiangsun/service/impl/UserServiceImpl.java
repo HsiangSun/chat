@@ -22,10 +22,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User userLogin(String username, String password) {
+    public User userLogin(String username) {
         Example example = new Example(User.class);
         example.createCriteria().andEqualTo("username",username);
-        example.createCriteria().andEqualTo("password",password);
         User user = userMapper.selectOneByExample(example);
         return user;
     }
